@@ -18,7 +18,7 @@ public class ExculatorServices implements Runnable {
 	public void run() {
 		
 			sayac++;
-			System.out.println(sayac+".film adý : ");
+			System.out.println(sayac+".film adý : " + filmAdi +", "+"Filmin türü : "+ filmTuru);
 				
 		
 	}
