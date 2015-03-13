@@ -10,15 +10,15 @@ public abstract class Test {
 	
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 
-        //for (int i = 0; i < 20; i++) {
+     for (int i = 0; i < 20; i++) {
            Thread thread1 = new Thread(new ExculatorServices("Forrest Gump" , "Drama ,Romance"));
            executor.execute(thread1);
            
            Thread thread2 = new Thread(new ExculatorServices("Seven Pounds" , "Drama"));
            executor.execute(thread2);
            
-          // thread1.start();        
-        //}
+            
+        }
         
         
 		executor.shutdown();
