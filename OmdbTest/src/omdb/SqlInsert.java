@@ -32,23 +32,29 @@ public class SqlInsert {
 		}
 		
 
-		private static void insertRecordIntoDbUserTable() throws SQLException {
+		private static <insert> void insertRecordIntoDbUserTable() throws SQLException {
 	 
 			Connection dbConnection = null;
 			Statement statement = null;
 	 
 			String insertTableSQL = "INSERT INTO DBUSER"
-					+ "(FILMADI, FILMYILI, FILMTURU, BASROLOYUNCULAR,FILMSURESI,FILMKONU) " + "VALUES"
-					+ "('Forrest Gump',1994,'Drama, Romance','Tom Hanks, Rebecca Williams',142 ,Forrest Gump life " + "to_date('"
+					+ "( USERNAME, CREATED_BY, CREATED_DATE) " + "VALUES"
+					+ "('BILGE','SYSTEM', " + "to_date('"
 					+ getCurrentTimeStamp() + "', 'yyyy/mm/dd hh24:mi:ss'))";
+					
+				
 	 
 			try {
 				dbConnection = getDBConnection();
 				statement = dbConnection.createStatement();
 	 
 				System.out.println(insertTableSQL);
-	 
-				// execute insert SQL statement
+				
+			 insert FILM; 
+			 values ('Forrest Gump',1994,'Drama, Romance','Tom Hanks', 'Rebecca Williams',142 , 'Forrest Gump life');
+				
+				 
+				
 				statement.executeUpdate(insertTableSQL);
 	 
 				System.out.println("Record is inserted into DBUSER table!");
